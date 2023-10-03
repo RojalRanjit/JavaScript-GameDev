@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <canvas
+        style="background-color: black"
+        id="canvas"
+        width="800"
+        height="800"
+    > </canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const context = canvas.getContext("2d");
+
+        //box
+
+        canvas.addEventListener("mousemove", (event) => {
+        console.log(event.clientX, event.clientY);
+
+        context.clearRect(0, 0, 800, 800); //clear screen
+
+        context.beginPath();
+        context.fillStyle = "blue";
+        context.arc(event.clientX, event.clientY, 60, 0, 360);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "red";
+        context.arc(event.clientX, event.clientY, 40, 0, 360);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "yellow";
+        context.arc(event.clientX, event.clientY, 20, 0, 360);
+        context.fill();
+
+      });
+    </script>
+</body>
+</html>
