@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign 3</title>
+</head>
+<body>
+    <canvas
+    style="background-color: lime"
+    id="canvas"
+    width="800"
+    height="800"
+  ></canvas>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const c = canvas.getContext("2d");
+
+    let x = 400;
+    let y = 20;
+        
+    function renderCircle() {
+
+      c.beginPath();
+      c.arc(x, y, 40, 0, 360);
+      c.fill();
+      y += 1;
+    }
+
+    // Game Loop
+    function update() {
+      c.fillStyle = "red";
+      c.clearRect(0, 0, 800, 800);
+      renderCircle();
+      window.requestAnimationFrame(update);
+    }
+
+    update();
+
+    canvas.addEventListener("click", (event) => {
+        x = event.clientX;
+        y = event.clientY;
+    })
+  </script>
+</body>
+</html>
