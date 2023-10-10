@@ -6,7 +6,7 @@ class Particle {
   constructor() {
     this.x = Math.random() * (800 - 0) + 0;
     this.y = Math.random() * (800 - 0) + 0;
-    this.r = Math.random() * (50 - 20) + 20;
+    this.r = Math.random() * (70 - 20) + 20;
   }
 
   draw() {
